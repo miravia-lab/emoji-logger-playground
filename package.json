@@ -1,0 +1,43 @@
+{
+  "name": "emoji-logger-playground",
+  "version": "1.0.0",
+  "description": "🎪 Pure Fun Logging Playground - キャシちゃま専用お遊び場 💜",
+  "type": "module",
+  "main": "utils/EmojiLogger.js",
+  "scripts": {
+    "test": "node test-emojilogger.js",
+    "play": "node test-emojilogger.js",
+    "quick": "node test-emojilogger.js quick",
+    "demo": "node test-emojilogger.js",
+    "princess": "node -e \"import('./utils/EmojiLogger.js').then(({emojiLogger}) => emojiLogger.setCharacter('princess').demo())\"",
+    "hakata": "node -e \"import('./utils/EmojiLogger.js').then(({emojiLogger}) => emojiLogger.setCharacter('hakata').demo())\"",
+    "british": "node -e \"import('./utils/EmojiLogger.js').then(({emojiLogger}) => emojiLogger.setCharacter('british').demo())\""
+  },
+  "keywords": [
+    "logging",
+    "emoji", 
+    "fun",
+    "entertainment", 
+    "console",
+    "debug",
+    "princess",
+    "hakata", 
+    "british",
+    "sarcasm",
+    "ramen",
+    "ascii-art"
+  ],
+  "author": "キャシちゃま & 小悪魔お嬢様 AI",
+  "license": "SEE LICENSE IN LICENSE",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miravia-lab/emoji-logger-playground.git"
+  },
+  "bugs": {
+    "url": "https://github.com/miravia-lab/emoji-logger-playground/issues"
+  },
+  "homepage": "https://github.com/miravia-lab/emoji-logger-playground#readme"
+}
