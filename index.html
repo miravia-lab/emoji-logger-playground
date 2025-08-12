@@ -726,38 +726,47 @@ And here you are, blissfully unaware that your code has just achieved what I pre
             }
         }
 
-        // Create global instance
-        window.emojiLogger = new EmojiLogger();
-        
-        // Override console.log to capture output
-        const output = document.getElementById('output');
-        const originalLog = console.log;
-        const originalError = console.error;
-        const originalWarn = console.warn;
-        
-        console.log = function(...args) {
-            originalLog.apply(console, arguments);
-            const message = args.join(' ');
-            output.textContent += message + '\n';
-            output.scrollTop = output.scrollHeight;
-        };
-
-        console.error = function(...args) {
-            originalError.apply(console, arguments);
-            const message = args.join(' ');
-            output.textContent += message + '\n';
-            output.scrollTop = output.scrollHeight;
-        };
-
-        console.warn = function(...args) {
-            originalWarn.apply(console, arguments);
-            const message = args.join(' ');
-            output.textContent += message + '\n';
-            output.scrollTop = output.scrollHeight;
-        };
-
-        // Character selection
+        // Initialize everything when DOM is ready
         document.addEventListener('DOMContentLoaded', function() {
+            // Create global instance
+            window.emojiLogger = new EmojiLogger();
+            
+            // Get output element
+            const output = document.getElementById('output');
+            
+            // Override console.log to capture output
+            const originalLog = console.log;
+            const originalError = console.error;
+            const originalWarn = console.warn;
+            
+            console.log = function(...args) {
+                originalLog.apply(console, arguments);
+                const message = args.join(' ');
+                if (output) {
+                    output.textContent += message + '\n';
+                    output.scrollTop = output.scrollHeight;
+                }
+            };
+
+            console.error = function(...args) {
+                originalError.apply(console, arguments);
+                const message = args.join(' ');
+                if (output) {
+                    output.textContent += message + '\n';
+                    output.scrollTop = output.scrollHeight;
+                }
+            };
+
+            console.warn = function(...args) {
+                originalWarn.apply(console, arguments);
+                const message = args.join(' ');
+                if (output) {
+                    output.textContent += message + '\n';
+                    output.scrollTop = output.scrollHeight;
+                }
+            };
+
+            // Character selection
             const cards = document.querySelectorAll('.character-card');
             
             cards.forEach(card => {
