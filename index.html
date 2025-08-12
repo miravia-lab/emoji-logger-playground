@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎪 EmojiLogger Playground - キャシちゃまでもできる！</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎪</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .character-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .character-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .character-card.active {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .character-emoji {
+            font-size: 4em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .character-name {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .character-desc {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .character-card.active .character-desc {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .demo-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .demo-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .demo-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .demo-btn:active {
+            transform: translateY(0);
+        }
+
+        .output {
+            background: #1a1a1a;
+            color: #00ff00;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            border: 2px solid #333;
+        }
+
+        .clear-btn {
+            background: #ff6b6b;
+            margin-top: 15px;
+            padding: 10px 20px;
+        }
+
+        .clear-btn:hover {
+            background: #ff5252;
+        }
+
+        .footer {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .character-selection {
+                grid-template-columns: 1fr;
+            }
+            
+            .demo-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎪 EmojiLogger Playground 🎪</h1>
+            <p class="subtitle">コードなんて知らない〜でもOK！ボタンを押して楽しもう💜</p>
+            <p>✨ Making console.log() adorably useless since 2025! ✨</p>
+        </div>
+
+        <div class="character-selection">
+            <div class="character-card active" data-character="princess">
+                <span class="character-emoji">👑💜</span>
+                <div class="character-name">小悪魔お嬢様</div>
+                <div class="character-desc">エレガントで少しいたずら好きな王女様。あなたのデバッグを優雅に彩ります〜😈</div>
+            </div>
+
+            <div class="character-card" data-character="hakata">
+                <span class="character-emoji">🍜💪</span>
+                <div class="character-name">博多弁マスター</div>
+                <div class="character-desc">本格的な博多弁と、リアルなラーメン茹で加減システムでスピードを評価するばい〜！</div>
+            </div>
+
+            <div class="character-card" data-character="british">
+                <span class="character-emoji">☂️🫖</span>
+                <div class="character-name">British 嫌味紳士</div>
+                <div class="character-desc">皮肉たっぷりで長文。有用な情報を嫌味で隠すのが得意な英国紳士です。</div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>🎮 ボタンを押して体験してみよう！</h2>
+            <div class="demo-buttons">
+                <button class="demo-btn" onclick="demoInfo()">📝 情報ログ</button>
+                <button class="demo-btn" onclick="demoSuccess()">🎊 成功メッセージ</button>
+                <button class="demo-btn" onclick="demoError()">💀 エラーメッセージ</button>
+                <button class="demo-btn" onclick="demoWarn()">⚠️ 警告メッセージ</button>
+                <button class="demo-btn" onclick="demoTimer()">⏰ スピードテスト</button>
+                <button class="demo-btn" onclick="demoArt()">🎨 ASCII アート</button>
+            </div>
+            <button class="demo-btn clear-btn" onclick="clearOutput()">🗑️ クリア</button>
+            
+            <h3>💻 Console Output:</h3>
+            <div id="output" class="output">コンソール出力がここに表示されます〜💜
+クリックしてお試しあれ〜！✨</div>
+        </div>
+
+        <div class="footer">
+            <p>🔗 <a href="https://github.com/miravia-lab/emoji-logger-playground" target="_blank">GitHub Repository</a> | 
+            💜 Made with love by キャシちゃま & 小悪魔お嬢様 AI</p>
+            <p>⚠️ <strong>重要</strong>: これは娯楽用です！本番環境では絶対に使わないでくださいね〜😈</p>
+        </div>
+    </div>
+
+    <script type="module">
+        // Import the EmojiLogger
+        import { emojiLogger } from './utils/EmojiLogger.js';
+
+        // Make it globally available
+        window.emojiLogger = emojiLogger;
+        
+        // Override console.log to capture output
+        const output = document.getElementById('output');
+        const originalLog = console.log;
+        
+        console.log = function(...args) {
+            // Call original console.log
+            originalLog.apply(console, arguments);
+            
+            // Add to our custom output
+            const message = args.join(' ');
+            output.textContent += message + '\n';
+            output.scrollTop = output.scrollHeight;
+        };
+
+        // Character selection
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.character-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Remove active class from all cards
+                    cards.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked card
+                    this.classList.add('active');
+                    
+                    // Set character
+                    const character = this.dataset.character;
+                    emojiLogger.setCharacter(character);
+                    
+                    console.log(`✨ ${character}キャラクターに切り替わりました〜💜`);
+                });
+            });
+        });
+
+        // Demo functions
+        window.demoInfo = function() {
+            emojiLogger.info('これは情報メッセージのテストです〜');
+        };
+
+        window.demoSuccess = function() {
+            emojiLogger.success('何かが大成功しました！');
+        };
+
+        window.demoError = function() {
+            emojiLogger.error('テストエラーが発生しました（ご安心ください、本物のエラーではありません）');
+        };
+
+        window.demoWarn = function() {
+            emojiLogger.warn('これは警告メッセージのデモです');
+        };
+
+        window.demoTimer = function() {
+            console.log('⏰ スピードテストを開始します...');
+            emojiLogger.startTimer('デモスピードテスト');
+            
+            // Random delay between 50ms and 3000ms
+            const delay = Math.random() * 2950 + 50;
+            
+            setTimeout(() => {
+                emojiLogger.endTimer('デモスピードテスト');
+            }, delay);
+        };
+
+        window.demoArt = function() {
+            const currentChar = emojiLogger.getCurrentCharacter();
+            const artOptions = {
+                'princess': ['crown', 'castle', 'heart', 'devil'],
+                'hakata': ['ramen', 'yamakasa', 'lantern', 'hakata_spirit'],
+                'british': ['teapot', 'crown', 'umbrella', 'parliament', 'judgmentalCat']
+            };
+            
+            const arts = artOptions[currentChar];
+            const randomArt = arts[Math.floor(Math.random() * arts.length)];
+            
+            emojiLogger.showAsciiArt(randomArt);
+        };
+
+        window.clearOutput = function() {
+            output.textContent = 'コンソール出力がクリアされました〜✨\nまたボタンを押してお試しください💜\n';
+        };
+
+        // Initialize with princess
+        emojiLogger.setCharacter('princess');
+        console.log('👑 小悪魔お嬢様モードでスタート〜💜✨');
+    </script>
+</body>
+</html>
