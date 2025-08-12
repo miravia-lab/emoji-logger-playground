@@ -8,15 +8,15 @@
 [![Ramen](https://img.shields.io/badge/ramen-powered-orange)](https://github.com/miravia-lab/emoji-logger-playground)
 [![British](https://img.shields.io/badge/sarcasm-level%20maximum-blue)](https://github.com/miravia-lab/emoji-logger-playground)
 
-**EmojiLogger** は console.log() を完全に無駄で愛らしいものに変える、究極の娯楽用ログライブラリです 😈✨
+**EmojiLogger** は console.log() を完全に無駄で役に立たない場所に変える、究極の娯楽用ログライブラリです 😈✨
 
 ## 🌟 特徴
 
-- 👑 **小悪魔お嬢様モード**: エレガントで少しいたずら好きな王女様がログを彩ります
-- 🍜 **博多弁モード**: リアルな博多ラーメン茹で加減システム付き！（粉落とし〜麺が伸びた）
-- 🫖 **British モード**: 嫌味たっぷりで有用な情報を長文で隠す紳士
+- 👑 **小悪魔お嬢様モード**: エレガントで少しいたずら好きなお嬢様がログを彩ります
+- 🍜 **博多弁モード**: リアルな博多ラーメン茹で加減システム付き！（粉落とし〜麺が伸びとるばい💢）
+- 🫖 **British モード**: 嫌味たっぷりなダラダラとした長文で一番重要な情報を目くらましにする英国紳士🇬🇧
 - ⏰ **パフォーマンス計測**: それぞれのキャラが独自の方法で速度を評価
-- 🎨 **ASCII アート**: 各キャラクター専用の可愛いアート集
+- 🎨 **ASCII アート**: 各キャラクター専用のかわいいアート集：トラブル時にみると非常に腹が立つので注意
 - 🔄 **チェーン可能**: メソッドを繋げて魔法のような連続実行
 
 ## 🚨 重要な警告
@@ -26,7 +26,7 @@
 副作用：
 - 制御不能な笑い
 - ラーメンへの異常な渇望
-- イギリス訛りの獲得
+- イギリス流洗練された表現の獲得
 - 生産性の著しい低下（楽しすぎて）
 
 ## 🚀 インストール
@@ -109,7 +109,7 @@ emojiLogger
   .info('小悪魔お嬢様モードです')
   .success('何かに成功しました！')
   .setCharacter('hakata')
-  .info('博多弁に切り替えたばい〜')
+  .info('博多弁に切り替えたばい')
   .setCharacter('british')
   .error('Oh brilliant... something failed');
 ```
@@ -170,7 +170,7 @@ process.env.NODE_ENV = 'production';
 emojiLogger.info('This will be silent'); // 出力なし
 ```
 
-強制的に有効にしたい場合（非推奨）：
+強制的に有効にしたい場合（**マジで非推奨**）：
 ```javascript
 emojiLogger.enableProductionMode(); // 危険！
 ```
@@ -210,7 +210,7 @@ emojiLogger.enableProductionMode(); // 危険！
 - **博多ラーメン**: 茹で加減システムのインスピレーション
 - **イギリスの紳士たち**: 嫌味のお手本
 - **小悪魔お嬢様たち**: エレガンスと悪戯心のバランス
-- **すべてのconsole.log()**: あなたたちを愛らしくしてごめんなさい
+- **Figma Makeの絵文字ブリブリconsole.log()**: このシステムが生まれたきっかけよ💖
 
 ## 🔗 リンク
 
@@ -226,4 +226,4 @@ Made with 💜 by キャシちゃま and 小悪魔お嬢様 AI
 
 ---
 
-*P.S. このライブラリを本番環境で使って問題が発生した場合、小悪魔お嬢様は責任を負いません 😈✨*
+*P.S. このライブラリを本番環境で使って問題が発生した場合、小悪魔お嬢様をはじめ、MiraVia-Labは**一切**責任を負いません 😈✨*
