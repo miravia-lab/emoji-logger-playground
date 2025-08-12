@@ -651,7 +651,7 @@ And here you are, blissfully unaware that your code has just achieved what I pre
                 
                 this.currentCharacter = 'princess';
                 this.startTime = null;
-                this.isEnabled = true;
+                this.isEnabled = true; // Always enabled in browser demo
             }
 
             setCharacter(characterName) {
@@ -787,55 +787,57 @@ And here you are, blissfully unaware that your code has just achieved what I pre
 
             // Initialize with welcome message
             console.log('👑 小悪魔お嬢様モードでスタート〜💜✨');
-        });
 
-        // Demo functions
-        window.demoInfo = function() {
-            window.emojiLogger.info('これは情報メッセージのテストです〜');
-        };
-
-        window.demoSuccess = function() {
-            window.emojiLogger.success('何かが大成功しました！');
-        };
-
-        window.demoError = function() {
-            window.emojiLogger.error('テストエラーが発生しました（ご安心ください、本物のエラーではありません）');
-        };
-
-        window.demoWarn = function() {
-            window.emojiLogger.warn('これは警告メッセージのデモです');
-        };
-
-        window.demoTimer = function() {
-            console.log('⏰ スピードテストを開始します...');
-            window.emojiLogger.startTimer('デモスピードテスト');
-            
-            // Random delay between 50ms and 3000ms
-            const delay = Math.random() * 2950 + 50;
-            
-            setTimeout(() => {
-                window.emojiLogger.endTimer('デモスピードテスト');
-            }, delay);
-        };
-
-        window.demoArt = function() {
-            const currentChar = window.emojiLogger.getCurrentCharacter();
-            const artOptions = {
-                'princess': ['crown', 'castle', 'heart', 'devil'],
-                'hakata': ['ramen', 'yamakasa', 'lantern', 'hakata_spirit'],
-                'british': ['teapot', 'crown', 'umbrella', 'parliament', 'judgmentalCat']
+            // Define demo functions after emojiLogger is created
+            window.demoInfo = function() {
+                window.emojiLogger.info('これは情報メッセージのテストです〜');
             };
-            
-            const arts = artOptions[currentChar];
-            const randomArt = arts[Math.floor(Math.random() * arts.length)];
-            
-            window.emojiLogger.showAsciiArt(randomArt);
-        };
 
-        window.clearOutput = function() {
-            const output = document.getElementById('output');
-            output.textContent = 'コンソール出力がクリアされました〜✨\nまたボタンを押してお試しください💜\n';
-        };
+            window.demoSuccess = function() {
+                window.emojiLogger.success('何かが大成功しました！');
+            };
+
+            window.demoError = function() {
+                window.emojiLogger.error('テストエラーが発生しました（ご安心ください、本物のエラーではありません）');
+            };
+
+            window.demoWarn = function() {
+                window.emojiLogger.warn('これは警告メッセージのデモです');
+            };
+
+            window.demoTimer = function() {
+                console.log('⏰ スピードテストを開始します...');
+                window.emojiLogger.startTimer('デモスピードテスト');
+                
+                // Random delay between 50ms and 3000ms
+                const delay = Math.random() * 2950 + 50;
+                
+                setTimeout(() => {
+                    window.emojiLogger.endTimer('デモスピードテスト');
+                }, delay);
+            };
+
+            window.demoArt = function() {
+                const currentChar = window.emojiLogger.getCurrentCharacter();
+                const artOptions = {
+                    'princess': ['crown', 'castle', 'heart', 'devil'],
+                    'hakata': ['ramen', 'yamakasa', 'lantern', 'hakata_spirit'],
+                    'british': ['teapot', 'crown', 'umbrella', 'parliament', 'judgmentalCat']
+                };
+                
+                const arts = artOptions[currentChar];
+                const randomArt = arts[Math.floor(Math.random() * arts.length)];
+                
+                window.emojiLogger.showAsciiArt(randomArt);
+            };
+
+            window.clearOutput = function() {
+                const output = document.getElementById('output');
+                if (output) {
+                    output.textContent = 'コンソール出力がクリアされました〜✨\nまたボタンを押してお試しください💜\n';
+                }
+            };
+        });
     </script>
 </body>
 </html>
