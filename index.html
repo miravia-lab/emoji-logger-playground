@@ -136,28 +136,76 @@
             transform: translateY(0);
         }
 
-        .output {
-            background: #1a1a1a;
-            color: #00ff00;
-            padding: 20px;
+        .console-instruction {
+            margin-top: 30px;
+        }
+
+        .console-instruction h3 {
+            text-align: center;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        .instruction-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
+            border-radius: 15px;
+            padding: 30px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .step-instruction {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .step-number {
+            font-size: 1.5em;
+            margin-right: 15px;
+            min-width: 40px;
+        }
+
+        .step-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .step-text kbd {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1em;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .magic-message {
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 10px;
-            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-            font-size: 0.9em;
-            line-height: 1.6;
-            max-height: 400px;
-            overflow-y: auto;
-            white-space: pre-wrap;
-            border: 2px solid #333;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
         }
 
-        .clear-btn {
-            background: #ff6b6b;
+        .open-console-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             margin-top: 15px;
-            padding: 10px 20px;
+            font-size: 1.0em;
+            transition: all 0.3s ease;
         }
 
-        .clear-btn:hover {
-            background: #ff5252;
+        .open-console-btn:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
         }
 
         .footer {
@@ -230,12 +278,32 @@
                 <button class="demo-btn" onclick="demoWarn()">⚠️ 警告メッセージ</button>
                 <button class="demo-btn" onclick="demoTimer()">⏰ スピードテスト</button>
                 <button class="demo-btn" onclick="demoArt()">🎨 ASCII アート</button>
+                <button class="demo-btn" onclick="clearConsole()">🧹 コンソールクリア</button>
             </div>
-            <button class="demo-btn clear-btn" onclick="clearOutput()">🗑️ クリア</button>
             
-            <h3>💻 Console Output:</h3>
-            <div id="output" class="output">コンソール出力がここに表示されます〜💜
-クリックしてお試しあれ〜！✨</div>
+            <div class="console-instruction">
+                <h3>💻 本物のConsole.logを見よう！</h3>
+                <div class="instruction-card">
+                    <div class="step-instruction">
+                        <span class="step-number">1️⃣</span>
+                        <span class="step-text">上のボタンを押してから...</span>
+                    </div>
+                    <div class="step-instruction">
+                        <span class="step-number">2️⃣</span>
+                        <span class="step-text"><kbd>F12</kbd> キーを押してください</span>
+                    </div>
+                    <div class="step-instruction">
+                        <span class="step-number">3️⃣</span>
+                        <span class="step-text">「<strong>Console</strong>」タブをクリック</span>
+                    </div>
+                    <div class="magic-message">
+                        ✨ そこに本物の小悪魔お嬢様・博多弁・British紳士が登場〜💜
+                    </div>
+                    <button class="demo-btn open-console-btn" onclick="openConsoleHelper()">
+                        🔧 開発者ツールを開く手伝い
+                    </button>
+                </div>
+            </div>
         </div>
 
         <div class="footer">
@@ -731,39 +799,37 @@ And here you are, blissfully unaware that your code has just achieved what I pre
             // Create global instance
             window.emojiLogger = new EmojiLogger();
             
-            // Get output element
-            const output = document.getElementById('output');
-            
-            // Override console.log to capture output
-            const originalLog = console.log;
-            const originalError = console.error;
-            const originalWarn = console.warn;
-            
-            console.log = function(...args) {
-                originalLog.apply(console, arguments);
-                const message = args.join(' ');
-                if (output) {
-                    output.textContent += message + '\n';
-                    output.scrollTop = output.scrollHeight;
-                }
-            };
+            // Helper function to guide users to open DevTools
+            window.openConsoleHelper = function() {
+                const instructions = `
+🎪✨ 開発者ツールの開き方 ✨🎪
 
-            console.error = function(...args) {
-                originalError.apply(console, arguments);
-                const message = args.join(' ');
-                if (output) {
-                    output.textContent += message + '\n';
-                    output.scrollTop = output.scrollHeight;
-                }
-            };
+【Windows/Linux】
+- F12キーを押す
+- または Ctrl + Shift + I
 
-            console.warn = function(...args) {
-                originalWarn.apply(console, arguments);
-                const message = args.join(' ');
-                if (output) {
-                    output.textContent += message + '\n';
-                    output.scrollTop = output.scrollHeight;
-                }
+【Mac】  
+- F12キーを押す
+- または Cmd + Option + I
+
+【ブラウザメニューから】
+- Chrome: メニュー → その他のツール → デベロッパーツール
+- Firefox: メニュー → ウェブ開発 → 開発ツールを表示
+- Safari: 開発 → Webインスペクタを表示
+
+開発者ツールが開いたら「Console」タブをクリック！
+そこで本物のconsole.logが見れます💜✨
+
+このボタンを押した後、F12でConsoleを見てください！
+                `;
+                
+                alert(instructions);
+                
+                // Output welcome message to real console
+                console.log('%c🎪✨ EmojiLogger Playground へようこそ！ ✨🎪', 'font-size: 16px; color: #667eea; font-weight: bold;');
+                console.log('%c💜 開発者ツールのConsoleタブでEmojiLoggerの本物の出力が見れます！', 'color: #764ba2; font-weight: bold;');
+                console.log('%c👑 ↓ 今後はここに愛らしいログが表示されます ↓', 'color: #f093fb; font-weight: bold;');
+                console.log('');
             };
 
             // Character selection
@@ -831,11 +897,9 @@ And here you are, blissfully unaware that your code has just achieved what I pre
                 window.emojiLogger.showAsciiArt(randomArt);
             };
 
-            window.clearOutput = function() {
-                const output = document.getElementById('output');
-                if (output) {
-                    output.textContent = 'コンソール出力がクリアされました〜✨\nまたボタンを押してお試しください💜\n';
-                }
+            window.clearConsole = function() {
+                console.clear();
+                console.log('%c💜✨ Console cleared! Ready for more fun! ✨💜', 'color: #667eea; font-weight: bold;');
             };
         });
     </script>
