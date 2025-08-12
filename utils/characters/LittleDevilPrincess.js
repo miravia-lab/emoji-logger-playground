@@ -32,11 +32,14 @@ export class LittleDevilPrincess {
    */
   info(message, data = null) {
     const messages = [
-      `💜 ${message} ✨ *sparkles gently*`,
-      `👑 ${message} ~ How perfectly lovely~ 💫`,
-      `💎 ${message} *nods approvingly with princess grace* ✨`,
-      `🌟 ${message} ~ Such wonderful information, darling~ 💜`,
-      `💫 *whispers elegantly* ${message} ~ Isn't that just delightful? 😈`
+      `💜 ${message} ✨ *sparkles gently* そんなことですの〜？`,
+      `👑 ${message} ~ How perfectly lovely~ 💫 お上品に承りましたわ〜`,
+      `💎 ${message} *nods approvingly with princess grace* ✨ さすがですの〜😈`,
+      `🌟 ${message} ~ Such wonderful information, darling~ 💜 とても素敵な情報ですわ〜`,
+      `💫 *whispers elegantly* ${message} ~ お嬢様的には大変興味深いですの〜 😈✨`,
+      `🎀 ${message} ～ *tilts head charmingly* あら〜そうなんですの？可愛らしい〜💜`,
+      `👸 ${message} ですのね〜 *elegant princess curtsy* 承知いたしましたわ〜✨`,
+      `💅 *examines nails regally* ${message} って〜？ふふっ、面白いですの〜😈💎`
     ];
     
     console.log(this.getRandomMessage(messages));
@@ -48,11 +51,15 @@ export class LittleDevilPrincess {
    */
   success(message, data = null) {
     const messages = [
-      `👑 Magnificent! ${message} 🎊 *claps hands with royal approval*`,
-      `💜✨ ${message} ~ Oh how absolutely WONDERFUL! *twirls happily* 🌟`,
-      `🎉 ${message}! *celebrates with elegant princess dance* You're so clever~ 💎`,
-      `👸 ${message} ~ *beams with pride* My darling developer is so talented! 💜🎊`,
-      `💫 ${message}! *giggles with pure joy* This princess is thoroughly impressed~ 😈✨`
+      `👑 Magnificent! ${message} 🎊 *claps hands with royal approval* 素晴らしいですわ〜！`,
+      `💜✨ ${message} ~ Oh how absolutely WONDERFUL! *twirls happily* 🌟 お見事ですの〜！`,
+      `🎉 ${message}! *celebrates with elegant princess dance* 天才的ですわね〜💎😈`,
+      `👸 ${message} ~ *beams with pride* さすが私の開発者様ですの〜！💜🎊`,
+      `💫 ${message}! *giggles with pure joy* この小悪魔も感動しちゃいました〜😈✨`,
+      `🌟 ${message} ですのね〜！*royal applause* 王室も認める出来栄えですわ〜👑💜`,
+      `💎 あら〜${message}ですって？*mischievous smile* 期待以上の成果ですの〜😈🎊`,
+      `🎀 ${message}〜！*dramatic princess pose* こんなに素敵だなんて〜✨💜`,
+      `👑 Magnifique! ${message}! *French princess accent* C'est parfait, darling〜💫😈`
     ];
 
     console.log(this.getRandomMessage(messages));
@@ -65,11 +72,15 @@ export class LittleDevilPrincess {
    */
   error(message, data = null) {
     const messages = [
-      `💀 Oh dear... ${message} *concerned princess expression* Let me help you, sweetie~ 😈💜`,
-      `😱 ${message}?! *gasps elegantly* Don't worry, darling, we'll fix this together~ 👑`,
-      `💔 *gentle sigh* ${message} ~ Even princesses face challenges, you know~ 💜✨`,
-      `🌧️ ${message} *pouts adorably* But failures make our victories even sweeter~ 😈💎`,
-      `💀😈 ${message} ~ *mischievous smile* Time for the princess to work some magic~ 👑✨`
+      `💀 Oh dear... ${message} *concerned princess expression* 大丈夫ですの〜？お嬢様が助けて差し上げますわ〜😈💜`,
+      `😱 ${message}ですって？！*gasps elegantly* ご心配なく〜一緒に解決いたしましょう〜👑`,
+      `💔 *gentle sigh* ${message} ですのね〜 お嬢様でも時にはこういうことがありますの〜💜✨`,
+      `🌧️ ${message} *pouts adorably* でも〜失敗があるから成功が輝くんですのよ〜😈💎`,
+      `💀😈 ${message} ですの〜？ *mischievous smile* お嬢様の魔法で解決してさしあげますわ〜👑✨`,
+      `😰 あらあら〜${message}なんて〜*worried princess face* でも大丈夫ですの〜一緒に頑張りましょう〜💜`,
+      `💧 ${message}？*elegant tear* 悲しいですけど〜小悪魔は諦めませんの〜😈🌟`,
+      `🙄 ${message}ですって〜？*rolls eyes playfully* まあ〜仕方ありませんわね〜💅✨`,
+      `👑 ${message} *royal sigh* Even royalty faces setbacks... でもこれも経験ですの〜😈💜`
     ];
 
     console.log(this.getRandomMessage(messages));
@@ -196,6 +207,41 @@ export class LittleDevilPrincess {
     ╚═══════════════╝
         💫 💎 💫
 *Royal princess aura intensifies* ✨`,
+
+      tiara: `
+    💎✨👑✨💎
+       ╭─╮
+      ╱   ╲
+     ╱ 👑💜 ╲
+    ╱ PRINCESS ╲
+   ╱___________╲
+      💜😈💜
+*adjusts tiara elegantly* ✨`,
+
+      mirror: `
+    🪞✨ Princess Mirror ✨🪞
+    ╭─────────────────╮
+    │     👑💜👑     │
+    │  ╭─────────╮   │
+    │  │ 😈     💜│   │
+    │  │  KAWAII  │   │
+    │  │ PRINCESS │   │
+    │  ╰─────────╯   │
+    │     ✨💎✨     │
+    ╰─────────────────╯
+*The fairest of them all* 💜`,
+
+      tea_party: `
+    🫖☕ Princess Tea Party ☕🫖
+      👑💜👑
+     ╭─────╮
+    ╱ ☕💜☕ ╲
+   ╱ ELEGANT ╲
+  ╱    TEA    ╲
+ ╱   PARTY    ╲
+╱_____________╲
+   🍰💜🍰
+*sips tea with royal grace* ✨😈`,
 
       castle: `
     🏰✨ Princess Castle ✨🏰

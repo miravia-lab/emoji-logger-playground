@@ -48,11 +48,15 @@ export class BritishSarcasm {
    */
   success(message, data = null) {
     const messages = [
-      `☕🎩 ${message} ~ Well, well, well... *raises eyebrow with grudging approval* I suppose that'll do. Rather unexpectedly competent, actually. ☂️✨`,
-      `🫖🎊 ${message}! *drops monocle in genuine surprise* Good heavens, someone actually managed to... succeed? How delightfully... shocking. 💀👏`,
-      `☂️🌟 ${message} ~ *straightens tie with impressed authority* Blimey, that's actually... proper brilliant, that is! *tips hat reluctantly* ☕🎉`,
-      `👨‍💼✨ ${message}! *adjusts umbrella with dignified celebration* Well I never... competence in the 21st century! *golf clap* 🫖🎊`,
-      `☕💎 ${message} ~ *sets down teacup with ceremonial precision* Right then... that's genuinely impressive. Carry on. *nods regally* ☂️👑`
+      `☕🎩 ${message} ~ Well, well, well... *raises eyebrow with grudging approval* I suppose that'll do. Rather like a proper afternoon tea at Fortnum & Mason - unexpectedly refined. ☂️✨`,
+      `🫖🎊 ${message}! *drops monocle in genuine surprise* Good heavens, someone actually managed to... succeed? Almost as shocking as finding decent fish and chips at Borough Market. 💀👏`,
+      `☂️🌟 ${message} ~ *straightens tie with impressed authority* Blimey, that's actually... proper brilliant! Worth celebrating with a pint at The George Inn in Southwark, I'd say. ☕🎉`,
+      `👨‍💼✨ ${message}! *adjusts umbrella with dignified celebration* Well I never... this deserves a proper breakfast at The Ivy, not your usual greasy spoon nonsense. 🫖🎊`,
+      `☕💎 ${message} ~ *sets down teacup with ceremonial precision* Right then... genuinely impressive. Almost as good as the scones at Sketch in Mayfair. ☂️👑`,
+      `🎭 ${message} indeed! *theatrical applause* This calls for champagne afternoon tea at The Ritz... though I suspect you'd prefer McDonald's, wouldn't you? 💀✨`,
+      `🏰 ${message}... *grudging respect* Actually rather sophisticated. Like a proper Sunday roast at Rules Restaurant - old school excellence. ☂️🍾`,
+      `🫖 ${message}! *polishes monocle thoughtfully* Finally, some competence! This deserves high tea at Harrods, not your usual Starbucks swill. ☕👑`,
+      `☂️ ${message} ~ Remarkable! *tips bowler hat* Worth a celebration at Claridge's Bar... though you'll probably settle for Weatherspoons, won't you? 💀🥂`
     ];
 
     console.log(this.getRandomMessage(messages));

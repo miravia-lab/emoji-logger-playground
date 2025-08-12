@@ -344,9 +344,11 @@
 
             info(message, data = null) {
                 const messages = [
-                    `💜 ${message} ✨ *sparkles gently*`,
-                    `👑 ${message} ~ How perfectly lovely~ 💫`,
-                    `💎 ${message} *nods approvingly with princess grace* ✨`
+                    `💜 ${message} ✨ *sparkles gently* そんなことですの〜？`,
+                    `👑 ${message} ~ How perfectly lovely~ 💫 お上品に承りましたわ〜`,
+                    `💎 ${message} *nods approvingly with princess grace* ✨ さすがですの〜😈`,
+                    `🌟 ${message} ~ Such wonderful information, darling~ 💜 とても素敵な情報ですわ〜`,
+                    `🎀 ${message} ～ *tilts head charmingly* あら〜そうなんですの？可愛らしい〜💜`
                 ];
                 console.log(this.getRandomMessage(messages));
                 if (data) console.log('📊 Data:', data);
@@ -354,9 +356,11 @@
 
             success(message, data = null) {
                 const messages = [
-                    `👑 Magnificent! ${message} 🎊 *claps hands with royal approval*`,
-                    `💜 ${message} ✨ *sparkles with delight* How absolutely divine!`,
-                    `🎉 ${message} ~ *giggles with mischievous satisfaction* Perfect~ 😈💫`
+                    `👑 Magnificent! ${message} 🎊 *claps hands with royal approval* 素晴らしいですわ〜！`,
+                    `💜 ${message} ✨ *sparkles with delight* お見事ですの〜😈`,
+                    `🎉 ${message} ~ *giggles with mischievous satisfaction* 天才的ですわね〜💎`,
+                    `🌟 ${message} ですのね〜！*royal applause* 王室も認める出来栄えですわ〜👑💜`,
+                    `💎 あら〜${message}ですって？*mischievous smile* 期待以上の成果ですの〜😈🎊`
                 ];
                 console.log(this.getRandomMessage(messages));
                 if (data) console.log('📊 Data:', data);
@@ -431,7 +435,27 @@
         / 💜 \\
        |  ^^  |
        | \\__/ |
-        ~~👑~~`
+        ~~👑~~`,
+                    tiara: `
+    💎✨👑✨💎
+       ╭─╮
+      ╱   ╲
+     ╱ 👑💜 ╲
+    ╱ PRINCESS ╲
+   ╱___________╲
+      💜😈💜
+*adjusts tiara elegantly* ✨`,
+                    mirror: `
+    🪞✨ Princess Mirror ✨🪞
+      ╭─────────╮
+      │ 👑💜👑 │
+      │ ╭─────╮ │
+      │ │ 😈💜│ │
+      │ │KAWAII│ │
+      │ ╰─────╯ │
+      │ ✨💎✨ │
+      ╰─────────╯
+*The fairest of them all* 💜`
                 };
                 console.log(arts[artName] || '💜 *mysterious princess magic* ✨');
             }
@@ -886,7 +910,7 @@ And here you are, blissfully unaware that your code has just achieved what I pre
             window.demoArt = function() {
                 const currentChar = window.emojiLogger.getCurrentCharacter();
                 const artOptions = {
-                    'princess': ['crown', 'castle', 'heart', 'devil'],
+                    'princess': ['crown', 'castle', 'heart', 'devil', 'tiara', 'mirror'],
                     'hakata': ['ramen', 'yamakasa', 'lantern', 'hakata_spirit'],
                     'british': ['teapot', 'crown', 'umbrella', 'parliament', 'judgmentalCat']
                 };
