@@ -245,22 +245,512 @@
         </div>
     </div>
 
-    <script type="module">
-        // Import the EmojiLogger
-        import { emojiLogger } from './utils/EmojiLogger.js';
+    <script>
+        // ============================================================================
+        // 🎪 EmojiLogger - Complete Standalone Version for GitHub Pages
+        // "Making console.log() adorably useless since 2025" 💜
+        // ============================================================================
 
-        // Make it globally available
-        window.emojiLogger = emojiLogger;
+        /**
+         * 👑💜 Little Devil Princess Character
+         */
+        class LittleDevilPrincess {
+            constructor() {
+                this.name = '小悪魔お嬢様';
+                this.emoji = '💜';
+            }
+
+            getRandomMessage(messages) {
+                return messages[Math.floor(Math.random() * messages.length)];
+            }
+
+            characterChangeMessage(fromCharacter) {
+                const messages = [
+                    `💜 *graceful curtsy* Oh my, switching from ${fromCharacter}? How delightfully... predictable~ 😈✨`,
+                    `👑 *adjusts tiara elegantly* Ah, you've chosen wisely, darling. The princess has arrived~ 💫`,
+                    `💎 *giggles softly* From ${fromCharacter} to moi? Your taste is improving, I see~ 😈💜`,
+                    `✨ *twirls in elegant dress* Welcome to my domain, sweet developer~ Let's make some magic~ 👑`
+                ];
+                console.log(this.getRandomMessage(messages));
+            }
+
+            info(message, data = null) {
+                const messages = [
+                    `💜 ${message} ✨ *sparkles gently*`,
+                    `👑 ${message} ~ How perfectly lovely~ 💫`,
+                    `💎 ${message} *nods approvingly with princess grace* ✨`
+                ];
+                console.log(this.getRandomMessage(messages));
+                if (data) console.log('📊 Data:', data);
+            }
+
+            success(message, data = null) {
+                const messages = [
+                    `👑 Magnificent! ${message} 🎊 *claps hands with royal approval*`,
+                    `💜 ${message} ✨ *sparkles with delight* How absolutely divine!`,
+                    `🎉 ${message} ~ *giggles with mischievous satisfaction* Perfect~ 😈💫`
+                ];
+                console.log(this.getRandomMessage(messages));
+                if (data) console.log('📊 Data:', data);
+            }
+
+            error(message, data = null) {
+                const messages = [
+                    `💀 Oh my... ${message} *sighs dramatically* How terribly inconvenient~ 😈💜`,
+                    `👑 ${message}? *raises eyebrow elegantly* Someone needs to fix this, don't they? ✨`,
+                    `💜 *pouts cutely* ${message} ~ This simply won't do, darling! 😈`
+                ];
+                console.log(this.getRandomMessage(messages));
+                if (data) console.error('💥 Error Data:', data);
+            }
+
+            warn(message, data = null) {
+                const messages = [
+                    `⚠️ ${message} *taps foot impatiently* 👑`,
+                    `💜 ${message} ~ Pay attention, darling~ ✨`,
+                    `👑 *clears throat delicately* ${message} 💫`
+                ];
+                console.log(this.getRandomMessage(messages));
+                if (data) console.warn('📋 Warning Data:', data);
+            }
+
+            debug(message, data = null) {
+                console.log(`🔍 ${message} *investigates with royal curiosity* 💜`);
+                if (data) console.log('🕵️ Debug Data:', data);
+            }
+
+            startTimer(operation) {
+                console.log(`⏰ *checks elegant pocket watch* Starting timer for: ${operation} 👑💜`);
+            }
+
+            endTimer(operation, duration) {
+                let evaluation = '';
+                if (duration < 100) evaluation = '⚡ Lightning fast! *applauds gracefully* 👑';
+                else if (duration < 500) evaluation = '✨ Quite speedy! *nods approvingly* 💜';
+                else if (duration < 1000) evaluation = '💫 Acceptable pace~ 😈';
+                else if (duration < 3000) evaluation = '👑 *taps foot* Could be faster, darling~';
+                else evaluation = '💀 *sighs dramatically* This is taking forever! 😈';
+                
+                console.log(`⏱️ ${operation} completed in ${duration}ms ${evaluation}`);
+            }
+
+            showAsciiArt(artName) {
+                const arts = {
+                    crown: `
+    💜 *Princess Crown* 💜
+         ♔♔♔
+        ♔♔♔♔♔
+       💎💎💎💎💎
+      ✨ Royal ✨
+     💜 Elegance 💜`,
+                    castle: `
+    🏰 *Princess Castle* 🏰
+         🏰
+        /   \\
+       |  💜 |
+       | 👑  |
+      ~~~~~~~~~~~`,
+                    heart: `
+    💜 *Princess Love* 💜
+      ♥ ♥   ♥ ♥
+    ♥   ♥ ♥   ♥
+      ♥  💜  ♥
+        ♥ ♥
+         ♥`,
+                    devil: `
+    😈 *Little Devil* 😈
+         😈
+        / 💜 \\
+       |  ^^  |
+       | \\__/ |
+        ~~👑~~`
+                };
+                console.log(arts[artName] || '💜 *mysterious princess magic* ✨');
+            }
+        }
+
+        /**
+         * 🍜💪 Hakata Ramen Master Character
+         */
+        class HakataRamen {
+            constructor() {
+                this.name = '博多弁マスター';
+                this.emoji = '🍜';
+            }
+
+            getRandomMessage(messages) {
+                return messages[Math.floor(Math.random() * messages.length)];
+            }
+
+            characterChangeMessage(fromCharacter) {
+                const messages = [
+                    `🍜 よかよ〜！${fromCharacter}から博多弁に変わったばい！ラーメンでも食いながらコード書くばい💪`,
+                    `💪 ${fromCharacter}？あー、そっちも悪くなかったばい〜でも博多弁が一番よ！🎌`,
+                    `🏮 おっしゃー！${fromCharacter}から博多に切り替えたばい！山笠みたいにがんばるけん〜✨`
+                ];
+                console.log(this.getRandomMessage(messages));
+            }
+
+            info(message, data = null) {
+                const messages = [
+                    `📝 ${message}ばい〜 情報共有するけんね💪`,
+                    `🍜 ${message} よか情報ばい！ラーメン一杯いかが？`,
+                    `⚡ ${message}っち！博多っ子らしくビシッと決めるばい✨`
+                ];
+                console.log(this.getRandomMessage(messages));
+                if (data) console.log('📊 データ:', data);
+            }
+
+            success(message, data = null) {
+                const messages = [
+                    `🎊 ${message}、ピシャッと決まったばい！やったー✨山笠並みの早さやん💪`,
+                    `🍜 ${message}！よっしゃー成功したばい〜ラーメン一杯おごったる🎉`,
+                    `⚡ ${message} 博多っ子の底力見せたったい！どんたく祭りみたいに盛り上がるばい🏮`
+                ];
+                console.log(this.getRandomMessage(messages));
+                if (data) console.log('📊 データ:', data);
+            }
+
+            error(message, data = null) {
+                const messages = [
+                    `💥 ${message} あちゃー、やらかしたばい💦 でもまあ、ラーメンでも食って元気出すばい🍜`,
+                    `🔥 ${message}？なんか変ばい〜 まあ博多っ子は諦めんけん、頑張るばい💪`,
+                    `⚠️ ${message} うーん、これはちょっと厄介ばい... でも大丈夫、なんとかなるばい✨`
+                ];
+                console.log(this.getRandomMessage(messages));
+                if (data) console.error('💥 エラーデータ:', data);
+            }
+
+            warn(message, data = null) {
+                const messages = [
+                    `⚠️ ${message} ちょっと気をつけんといかんばい〜💪`,
+                    `🍜 ${message} 博多ラーメンの硬さみたいに、適度に注意するばい`,
+                    `🏮 ${message} 山笠の準備と同じで、油断せんごと〜✨`
+                ];
+                console.log(this.getRandomMessage(messages));
+                if (data) console.warn('📋 警告データ:', data);
+            }
+
+            debug(message, data = null) {
+                console.log(`🔍 ${message} 博多弁でデバッグするばい〜💪`);
+                if (data) console.log('🕵️ デバッグデータ:', data);
+            }
+
+            startTimer(operation) {
+                console.log(`⏰ よっしゃ〜！${operation}のタイマー開始ばい！山笠みたいに早くいくけん💪🍜`);
+            }
+
+            endTimer(operation, duration) {
+                let ramenLevel = '';
+                if (duration < 50) ramenLevel = '🍜 粉落とし（職人技！神の領域ばい！）';
+                else if (duration < 300) ramenLevel = '🍜 ハリガネ（山笠並み！最高の硬さばい💪）';
+                else if (duration < 800) ramenLevel = '🍜 バリカタ（博多で一番人気の硬さばい〜✨）';
+                else if (duration < 1500) ramenLevel = '🍜 かため（ちょうどよか硬さばい）';
+                else if (duration < 3000) ramenLevel = '🍜 普通（優しい硬さばい〜）';
+                else if (duration < 5000) ramenLevel = '🍜 やわ（ちょっと柔らかめばい）';
+                else if (duration < 10000) ramenLevel = '🍜 バリやわ（お年寄り向けばい）';
+                else ramenLevel = '🍜 麺が伸びとるばい💢（作り直し推奨！）';
+
+                console.log(`⏱️ ${operation} 完了！${duration}ms → ${ramenLevel}`);
+            }
+
+            showAsciiArt(artName) {
+                const arts = {
+                    ramen: `
+    🍜 *博多ラーメン道場* 🍜
+        ~~~~🍜~~~~
+       (  ◉   ◉  )
+       |    💪    |
+        \\  ___  /
+         ~~~~~~
+      🥢 いただきます！🥢`,
+                    yamakasa: `
+    🏮 *博多祇園山笠* 🏮
+         ⛩️
+        /💪\\
+       | 🏮 |
+       |博多|
+      ~~~~~~~
+       オッショイ！`,
+                    lantern: `
+    🏮 *博多の提灯* 🏮
+         🏮
+        /  \\
+       | 🍜 |
+       | 博 |
+       | 多 |
+        \\__/`,
+                    hakata_spirit: `
+    💪 *博多っ子魂* 💪
+         💪
+        /🍜\\
+       | ^^  |
+       | 博多|
+        ~~~~
+      やったるばい！`
+                };
+                console.log(arts[artName] || '🍜 *博多の神秘* 💪');
+            }
+        }
+
+        /**
+         * ☂️🫖 British Sarcasm Character
+         */
+        class BritishSarcasm {
+            constructor() {
+                this.name = 'British Gentleman';
+                this.emoji = '☂️';
+            }
+
+            getRandomMessage(messages) {
+                return messages[Math.floor(Math.random() * messages.length)];
+            }
+
+            characterChangeMessage(fromCharacter) {
+                const messages = [
+                    `☂️ Oh how *delightfully* predictable. Switching from ${fromCharacter}, are we? *sips tea with barely concealed disdain* I suppose I shall have to salvage this mess... 🫖💀`,
+                    `🫖 *adjusts monocle critically* From ${fromCharacter} to proper British commentary? Well, it's about bloody time, wouldn't you say? *stirs tea aggressively* ☕`,
+                    `💀 Oh brilliant. Simply brilliant. ${fromCharacter} wasn't working out, so naturally you've come crawling back to superior British wit. *sips tea disapprovingly* How... predictable. ☂️✨`
+                ];
+                console.log(this.getRandomMessage(messages));
+            }
+
+            info(message, data = null) {
+                const messages = [
+                    `☂️ ${message}... *sips tea thoughtfully* Well, I suppose that's... adequate information. 🫖`,
+                    `📰 ${message} *adjusts reading glasses* How terribly... informative. ☕💀`,
+                    `🫖 *clears throat disapprovingly* ${message} - there you have it, I suppose. ☂️`
+                ];
+                console.log(this.getRandomMessage(messages));
+                if (data) console.log('📊 Data (if you must know):', data);
+            }
+
+            success(message, data = null) {
+                const messages = [
+                    `🎩 ${message} *raises eyebrow* Well, well... I suppose even you manage to succeed occasionally. How... refreshing. ☂️✨`,
+                    `☕ ${message} *sips tea approvingly* Adequate performance, I suppose. Don't let it go to your head. 🫖`,
+                    `💀 ${message} Oh brilliant! *slow clap* Finally managed something properly, did we? ☂️💀`
+                ];
+                console.log(this.getRandomMessage(messages));
+                if (data) console.log('📊 Success data (how novel):', data);
+            }
+
+            error(message, data = null) {
+                const messages = [
+                    `☂️ ${message}... Oh brilliant. Just brilliant. *sips tea aggressively* Here we are again, aren't we? Another day, another spectacular failure. ☕💀 
+Let me guess - you didn't read the documentation? Of course you didn't. Why would you? Documentation is for people who actually want to understand what they're doing. 
+*adjusts umbrella pompously* Well, I suppose I'll have to clean up this mess as usual. Do try to pay attention this time, won't you?`,
+                    
+                    `🫖 ${message} *sighs deeply* How absolutely... predictable. *stirs tea with visible irritation* 
+You know, back in my day, we actually tested our code before deploying it. Revolutionary concept, I know. 
+*peers over spectacles disapprovingly* Perhaps if you spent less time on social media and more time actually learning your craft... but no, that would be far too sensible, wouldn't it? ☂️💀`,
+                    
+                    `💀 ${message}? *chuckles darkly* Oh, this is simply marvelous. Absolutely marvelous. *sips tea with elaborate disdain* ☕
+Another masterpiece of modern development practices, I see. Let me paint you a picture: somewhere, a QA engineer is weeping. Somewhere else, a user is contemplating a different career. 
+And here you are, blissfully unaware that your code has just achieved what I previously thought impossible - making me appreciate the sweet embrace of retirement even more. ☂️✨`
+                ];
+                console.log(this.getRandomMessage(messages));
+                if (data) console.error('💥 Error details (brace yourself):', data);
+            }
+
+            warn(message, data = null) {
+                const messages = [
+                    `⚠️ ${message} *taps umbrella impatiently* Do pay attention, there's a good chap. ☂️`,
+                    `🫖 ${message} *sighs over tea* One would think this would be obvious, but apparently not... ☕`,
+                    `💀 *peers disapprovingly* ${message} - consider yourself warned. ☂️💀`
+                ];
+                console.log(this.getRandomMessage(messages));
+                if (data) console.warn('📋 Warning data (shocking, I know):', data);
+            }
+
+            debug(message, data = null) {
+                console.log(`🔍 ${message} *investigates with superior intellect* ☂️🫖`);
+                if (data) console.log('🕵️ Debug data (fascinating stuff, really):', data);
+            }
+
+            startTimer(operation) {
+                console.log(`⏰ *checks pocket watch with theatrical precision* Beginning timing assessment for: ${operation}... *adjusts monocle* Do try not to disappoint me. ☂️🫖`);
+            }
+
+            endTimer(operation, duration) {
+                let evaluation = '';
+                if (duration < 100) evaluation = '⚡ *grudging approval* Surprisingly swift. Color me... mildly impressed. 🫖';
+                else if (duration < 500) evaluation = '✨ *nods condescendingly* Adequate pace, I suppose... ☂️';
+                else if (duration < 1000) evaluation = '🫖 *sips tea disapprovingly* Rather pedestrian timing... ☕';
+                else if (duration < 3000) evaluation = '⌚ *taps watch impatiently* Is this thing still running? ☂️💀';
+                else evaluation = '💀 *checks watch again* Good heavens... I could have written this myself faster... with my eyes closed... while making tea... 🫖☂️';
+
+                console.log(`⏱️ ${operation} completed in ${duration}ms ${evaluation}`);
+            }
+
+            showAsciiArt(artName) {
+                const arts = {
+                    teapot: `
+    🫖 *Proper British Teapot* 🫖
+         ___...___
+       ."         ".
+      /  ☕     ☕  \\
+     |      🫖      |
+      \\             /
+       ".  _____.  ."
+         """   """
+      *sips with superiority*`,
+                    crown: `
+    👑 *Her Majesty's Crown* 👑
+         ♔♔♔♔♔
+        ♔     ♔
+       ♔  💎   ♔
+      ♔         ♔
+     ~~~~~~~~~~~
+    *God Save the Queen*`,
+                    umbrella: `
+    ☂️ *Proper British Brolly* ☂️
+        ☂☂☂☂☂
+       /       \\
+      |    ☂    |
+      |         |
+       \\   |   /
+        \\  |  /
+         \\ | /
+          \\|/
+           |
+    *indispensable*`,
+                    parliament: `
+    🏛️ *Houses of Parliament* 🏛️
+         🏛️
+        /|||\\
+       ||||||||
+      |  Big  |
+      |  Ben  |
+      |  🕐   |
+      ~~~~~~~~
+    *Hear! Hear!*`,
+                    judgmentalCat: `
+    🐱 *Judgmental British Cat* 🐱
+         /\\_/\\
+        (  ಠ ಠ  )
+        |   -   |
+       /    ☕   \\
+      ~~~~~~~~~~~~
+    *utterly disapproving*`
+                };
+                console.log(arts[artName] || '☂️ *mysterious British weather* 🫖');
+            }
+        }
+
+        /**
+         * 🎪 Main EmojiLogger Class
+         */
+        class EmojiLogger {
+            constructor() {
+                this.characters = {
+                    'princess': new LittleDevilPrincess(),
+                    'hakata': new HakataRamen(),
+                    'british': new BritishSarcasm()
+                };
+                
+                this.currentCharacter = 'princess';
+                this.startTime = null;
+                this.isEnabled = true;
+            }
+
+            setCharacter(characterName) {
+                const validCharacters = Object.keys(this.characters);
+                if (!validCharacters.includes(characterName)) {
+                    console.warn(`🚨 Invalid character: ${characterName}. Available: ${validCharacters.join(', ')}`);
+                    return this;
+                }
+
+                const oldCharacter = this.currentCharacter;
+                this.currentCharacter = characterName;
+                
+                this.characters[characterName].characterChangeMessage(oldCharacter);
+                
+                return this;
+            }
+
+            info(message, data = null) {
+                this.characters[this.currentCharacter].info(message, data);
+                return this;
+            }
+
+            success(message, data = null) {
+                this.characters[this.currentCharacter].success(message, data);
+                return this;
+            }
+
+            error(message, data = null) {
+                this.characters[this.currentCharacter].error(message, data);
+                return this;
+            }
+
+            warn(message, data = null) {
+                this.characters[this.currentCharacter].warn(message, data);
+                return this;
+            }
+
+            debug(message, data = null) {
+                this.characters[this.currentCharacter].debug(message, data);
+                return this;
+            }
+
+            startTimer(operation) {
+                this.startTime = Date.now();
+                this.characters[this.currentCharacter].startTimer(operation);
+                return this;
+            }
+
+            endTimer(operation) {
+                if (!this.startTime) {
+                    this.warn('Timer was not started! Call startTimer() first');
+                    return this;
+                }
+                
+                const duration = Date.now() - this.startTime;
+                this.characters[this.currentCharacter].endTimer(operation, duration);
+                this.startTime = null;
+                return this;
+            }
+
+            showAsciiArt(artName) {
+                this.characters[this.currentCharacter].showAsciiArt(artName);
+                return this;
+            }
+
+            getAllCharacters() {
+                return Object.keys(this.characters);
+            }
+
+            getCurrentCharacter() {
+                return this.currentCharacter;
+            }
+        }
+
+        // Create global instance
+        window.emojiLogger = new EmojiLogger();
         
         // Override console.log to capture output
         const output = document.getElementById('output');
         const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
         
         console.log = function(...args) {
-            // Call original console.log
             originalLog.apply(console, arguments);
-            
-            // Add to our custom output
+            const message = args.join(' ');
+            output.textContent += message + '\n';
+            output.scrollTop = output.scrollHeight;
+        };
+
+        console.error = function(...args) {
+            originalError.apply(console, arguments);
+            const message = args.join(' ');
+            output.textContent += message + '\n';
+            output.scrollTop = output.scrollHeight;
+        };
+
+        console.warn = function(...args) {
+            originalWarn.apply(console, arguments);
             const message = args.join(' ');
             output.textContent += message + '\n';
             output.scrollTop = output.scrollHeight;
@@ -280,44 +770,47 @@
                     
                     // Set character
                     const character = this.dataset.character;
-                    emojiLogger.setCharacter(character);
+                    window.emojiLogger.setCharacter(character);
                     
                     console.log(`✨ ${character}キャラクターに切り替わりました〜💜`);
                 });
             });
+
+            // Initialize with welcome message
+            console.log('👑 小悪魔お嬢様モードでスタート〜💜✨');
         });
 
         // Demo functions
         window.demoInfo = function() {
-            emojiLogger.info('これは情報メッセージのテストです〜');
+            window.emojiLogger.info('これは情報メッセージのテストです〜');
         };
 
         window.demoSuccess = function() {
-            emojiLogger.success('何かが大成功しました！');
+            window.emojiLogger.success('何かが大成功しました！');
         };
 
         window.demoError = function() {
-            emojiLogger.error('テストエラーが発生しました（ご安心ください、本物のエラーではありません）');
+            window.emojiLogger.error('テストエラーが発生しました（ご安心ください、本物のエラーではありません）');
         };
 
         window.demoWarn = function() {
-            emojiLogger.warn('これは警告メッセージのデモです');
+            window.emojiLogger.warn('これは警告メッセージのデモです');
         };
 
         window.demoTimer = function() {
             console.log('⏰ スピードテストを開始します...');
-            emojiLogger.startTimer('デモスピードテスト');
+            window.emojiLogger.startTimer('デモスピードテスト');
             
             // Random delay between 50ms and 3000ms
             const delay = Math.random() * 2950 + 50;
             
             setTimeout(() => {
-                emojiLogger.endTimer('デモスピードテスト');
+                window.emojiLogger.endTimer('デモスピードテスト');
             }, delay);
         };
 
         window.demoArt = function() {
-            const currentChar = emojiLogger.getCurrentCharacter();
+            const currentChar = window.emojiLogger.getCurrentCharacter();
             const artOptions = {
                 'princess': ['crown', 'castle', 'heart', 'devil'],
                 'hakata': ['ramen', 'yamakasa', 'lantern', 'hakata_spirit'],
@@ -327,16 +820,13 @@
             const arts = artOptions[currentChar];
             const randomArt = arts[Math.floor(Math.random() * arts.length)];
             
-            emojiLogger.showAsciiArt(randomArt);
+            window.emojiLogger.showAsciiArt(randomArt);
         };
 
         window.clearOutput = function() {
+            const output = document.getElementById('output');
             output.textContent = 'コンソール出力がクリアされました〜✨\nまたボタンを押してお試しください💜\n';
         };
-
-        // Initialize with princess
-        emojiLogger.setCharacter('princess');
-        console.log('👑 小悪魔お嬢様モードでスタート〜💜✨');
     </script>
 </body>
 </html>
