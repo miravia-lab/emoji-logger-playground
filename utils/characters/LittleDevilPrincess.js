@@ -277,7 +277,115 @@ export class LittleDevilPrincess {
  ╲  PRINCESS   ╱
   ╲___________╱
       💜👑💜
-*Mischievous princess giggles* 💫`
+*Mischievous princess giggles* 💫`,
+
+      // === NEW FUNNY & ANNOYING ASCII ART ===
+      
+      smug: `
+      👑😈👑
+    ╔═══════════╗
+    ║    ◉   ◉  ║
+    ║      ω    ║
+    ║  ＼(^o^)／ ║
+    ║  I TOLD   ║
+    ║  YOU SO~  ║
+    ╚═══════════╝
+      💜💅💜
+*smug princess energy* 😈`,
+
+      dramatic: `
+    🎭💜 DRAMA QUEEN 💜🎭
+         /￣￣￣￣￣＼
+        /  OH MY GOD!  ＼
+       /  THIS IS THE   ＼
+      /  WORST DAY EVER! ＼
+     /_________________＼
+           👑😭👑
+    *throws tiara dramatically*
+      💜 "Life is SO hard!" 💜`,
+
+      spoiled: `
+    👑💸👑💸👑
+   ╔════════════════╗
+   ║ I WANT IT NOW! ║
+   ║      😈💜      ║
+   ║ *stamps foot*  ║
+   ║  WHERE'S MY    ║
+   ║   LATTE?! ☕   ║
+   ╚════════════════╝
+     💎 PRINCESS DEMAND 💎
+  *expects everything immediately*`,
+
+      judgmental: `
+       👑💜👑
+      /─────────＼
+     / ಠ     ಠ  ＼
+    /      ω      ＼
+   /_______________＼
+        │ │ │
+   "That's... cute"
+      *judges silently*
+      😈💅💜💅😈`,
+
+      passive_aggressive: `
+    💜✨ SO SWEET ✨💜
+    ╔═══════════════╗
+    ║   (◕ ‿ ◕)    ║
+    ║  "That's fine" ║
+    ║               ║
+    ║ (It's not fine)║
+    ║     😈👑😈    ║
+    ╚═══════════════╝
+  *smile that doesn't reach eyes*`,
+
+      tantrum: `
+    🌪️💜 PRINCESS TANTRUM 💜🌪️
+       ＼(°□°)／  ← ANGRY
+         │ │
+        ╱─┴─╲
+       ╱     ╲
+      ╱  WHY   ╲
+     ╱ DOESN'T  ╲
+    ╱ EVERYTHING ╲
+   ╱   WORK?!    ╲
+  ╱_______________╲
+    💥💢💥💢💥
+  *destroys everything nearby*`,
+
+      diva: `
+    🌟💜 DIVA MODE 💜🌟
+    ╭───────────────╮
+    │  ✨ ME ME ME ✨ │
+    │      👑😈👑     │
+    │   "I'm the     │
+    │   MAIN CHARACTER"│
+    │      💎💅💎     │
+    ╰───────────────╯
+   🎭 CENTER OF UNIVERSE 🎭
+  *everything revolves around me*`,
+
+      fake_innocent: `
+       😇💜 ANGEL FACE 💜😇
+     ╔══════════════════╗
+     ║    👼 (◡ ‿ ◡) 👼  ║
+     ║   "Who, me?"     ║
+     ║                  ║
+     ║ *hides evidence* ║
+     ║        😈👑😈     ║
+     ╚══════════════════╝
+    Definitely NOT planning chaos`,
+
+      materialistic: `
+    💎💳💎💳💎
+   ╔═════════════╗
+   ║  SHOPPING    ║
+   ║     👑💜     ║
+   ║  IS THERAPY  ║
+   ║              ║
+   ║ 💸💸💸💸💸  ║
+   ╚═════════════╝
+     CREDIT CARD WARRIOR
+   *buys happiness* 😈💅`
     };
   }
 
